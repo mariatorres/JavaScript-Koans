@@ -11,12 +11,13 @@ var B = function() {
 B.prototype = new A();
 
 test("typeof", function() {
-    equal(__, typeof({}), 'what is the type of an empty object?');
-    equal(__, typeof('apple'), 'what is the type of a string?');
-    equal(__, typeof(-5), 'what is the type of -5?');
-    equal(__, typeof(false), 'what is the type of false?');		
+    equal("object", typeof({}), 'what is the type of an empty object?');
+    equal("string", typeof('apple'), 'what is the type of a string?');
+    equal("number", typeof(-5), 'what is the type of -5?');
+    equal("boolean", typeof(false), 'what is the type of false?');		
 });
 
+//43
 test("property enumeration", function() {
     var keys = [];
     var values = [];
@@ -25,10 +26,11 @@ test("property enumeration", function() {
         keys.push(propertyName);
         values.push(person[propertyName]);
     }
-    ok(keys.equalTo(['__','__','__']), 'what are the property names of the object?');
-    ok(values.equalTo(['__',__,__]), 'what are the property values of the object?');
+    ok(keys.equalTo(['name','age','unemployed']), 'what are the property names of the object?');
+    ok(values.equalTo(['Amory Blaine',102,true]), 'what are the property values of the object?');
 });
 
+//44
 test("hasOwnProperty", function() {
     var b = new B();
     var propertyName;
